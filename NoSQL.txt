@@ -5,4 +5,22 @@ How to start the database: commands to use
 	* show dbs;
 	* show collections;
 
+Exercise 1
+Import the text file into MongoDB:
+	--> mongo test < mongo1.txt
+	--> show collections --> new collection called "users" is added
+	--> Look at the collection with: db.users.find()
+	--> Perform queries
+
+Select the documents in the users collection that have type A
+command: db.users.find({status:"A"})
+
+Select documents in the collection where status has the value A and either age is less than 30 or type equals 1
+command: db.users.find({status:"A", $or:[{age:{$lt:30}},{type:1}]})
+
+Retrieve all documents from the users collection where status equals either P or D
+command:db.users.find({$or:[{status:"P"},{status:"D"}]})
+
+Use the dot notation to match all documents where badges in an array that contains black as the first element
+command: db.users.find({"badges.0":"black"})
 
