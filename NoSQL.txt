@@ -1,0 +1,8 @@
+ EXERCISES NOSQL
+
+How to start the database: commands to use
+	* $ mongo 
+	* show dbs;
+	* show collections;
+
+
